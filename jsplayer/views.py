@@ -13,6 +13,14 @@ def upload(request):
         obj = Video()
         obj.name = request.POST['name']
         obj.videofile = request.FILES['videofile']
+        print(obj.videofile)
+        print('')
+        obj.save()
+        
+        obn = Video()
+        s = obn.videofile
+	    t = str(s)
+	    print(t)
         
         # print(str(obj.videofile))
         # s=str(obj.videofile)
@@ -29,11 +37,9 @@ def upload(request):
 
 
 
-        obj.save()
-	obn = Video()
-	s = obn.videofile
-	t = str(s)
-	print(t)
+       
+	
+	
 
         
 
