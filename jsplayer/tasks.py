@@ -7,7 +7,7 @@ from celery.schedules import crontab
 from django.conf import settings
 from celery.task import periodic_task
 
-@periodic_task(run_every=crontab(minute=50, hour=15))# here we assume we want it to be run every 5 mins
+@periodic_task(run_every=crontab(minute=5, hour=16))# here we assume we want it to be run every 5 mins
 def myTask():
     obj = Video()
     print(str(obj.videofile))
