@@ -12,7 +12,7 @@ import sys
 
 def upload(request):
     if request.method == 'POST':
-        obj = Video.objects.all()
+        obj = Video()
         obj.name = request.POST['name']
         obj.videofile = request.FILES['videofile']
         # print(obj.videofile)
