@@ -9,7 +9,7 @@ from celery.task import periodic_task
 
 @periodic_task(run_every=crontab(minute=50, hour=15))# here we assume we want it to be run every 5 mins
 def myTask():
-    obj = Video.objects.all()
+    obj = Video()
     print(str(obj.videofile))
     s = str(obj.videofile)
     t= s[0:len(s)-4]+'_360p.mp4'
