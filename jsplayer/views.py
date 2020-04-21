@@ -30,6 +30,10 @@ def upload(request):
 
 
         obj.save()
+	obn = Video()
+	s = obn.videofile
+	t = str(s)
+	print(t)
 
         
 

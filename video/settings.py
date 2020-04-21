@@ -1,3 +1,4 @@
+
 """
 Django settings for video project.
 
@@ -71,13 +72,13 @@ TEMPLATES = [
     },
 ]
 
-
-BROKER_URL = 'amqp://nihal:nihal123@localhost:5672/nihal_vhost'
-CELERY_RESULT_BACKEND = 'rpc://nihal:nihal123@localhost:5672/nihal_vhost'
+CELERY_BROKER_URL = 'amqp://localhost'
+# BROKER_URL = 'amqp://nihal:nihal123@142.93.212.58/nihal_vhost'
+# CELERY_RESULT_BACKEND = 'rpc://nihal:nihal123@142.93.212.58/nihal_vhost'
 # CELERY_ACCEPT_CONTENT = ['pickle']
-CELERY_ACCEPT_CONTENT = ['json','application/text']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
+# CELERY_ACCEPT_CONTENT = ['json','application/text']
+# CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_SERIALIZER = 'json'
 
 # BROKER_HOST = "localhost"
 # BROKER_PORT = 5672
