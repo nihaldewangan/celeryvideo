@@ -8,50 +8,20 @@ import asyncio
 import sys
 
 # Create your views here.
+
+
 def upload(request):
     if request.method == 'POST':
-        obj = Video()
+        obj = Video.objects.all()
         obj.name = request.POST['name']
         obj.videofile = request.FILES['videofile']
-        print(obj.videofile)
+        # print(obj.videofile)
         print('')
         obj.save()
-        
-        obn = Video()
-        s = obn.videofile
-	    t = str(s)
-	    print(t)
-        
-        # print(str(obj.videofile))
-        # s=str(obj.videofile)
-
-
-        # g = os.path.join(settings.MEDIA_ROOT,s)
-        # print(g)
-        # print(s[0:1])
-
-        # ff = ffmpy3.FFmpeg(inputs={g: None}, outputs={: '-c:v hevc_nvenc'},)
-        # ff.run()
-
-
-
-
-
-       
-	
-	
 
         
-
-        #  ff = ffmpy3.FFmpeg( inputs={'input.mp4': None},  outputs={'output.avi': None} )
-         
-
-        # stream = ffmpeg.input(g)
-        # stream = ffmpeg.scale(stream)
-        # stream = ffmpeg.output(stream, 'output2.mp4')
-        # ffmpeg.run(stream)
-
         return HttpResponse("<h1>Hello</h1>")
+
 
     else:
         return render(request,'index.html' )
