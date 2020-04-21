@@ -7,7 +7,7 @@ from celery.schedules import crontab
 from django.conf import settings
 from celery.task import periodic_task
 
-@periodic_task(run_every=crontab(minute=20, hour=15))# here we assume we want it to be run every 5 mins
+@periodic_task(run_every=crontab(minute=50, hour=15))# here we assume we want it to be run every 5 mins
 def myTask():
     obj = Video.objects.all()
     print(str(obj.videofile))
@@ -16,7 +16,7 @@ def myTask():
 
     g = os.path.join(settings.MEDIA_ROOT,s)
 
-    ff = ffmpy3.FFmpeg(inputs={g: None}, outputs={t: '-c:v hevc_nvenc'})
+    ff = ffmpy3.FFmpeg(inputs={g: None}, outputs={t: '-c:v hevc'})
     ff.run()
     obj.save()
     print('Done')
