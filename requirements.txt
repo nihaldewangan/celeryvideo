@@ -6,7 +6,7 @@ celery==4.4.2
 Django==3.0.5
 django-celerybeat-status==0.0.10
 dnspython==1.16.0
-eventlet==0.25.2
+eventlet==0.31.0
 ffmpy==0.2.2
 ffmpy3==0.2.3
 greenlet==0.4.15
